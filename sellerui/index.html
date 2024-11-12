@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture Seller Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <h2>E-Farm</h2>
+    <nav>
+      <a href="#" id="dashboardLink" class="active">Dashboard</a>
+      <a href="#" id="ordersLink">Orders</a>
+      <a href="#" id="historyLink">History</a>
+      <a href="#" id="notificationsLink">Notifications</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <header class="header">
+      <h1 id="mainHeader">Dashboard</h1>
+      <button onclick="toggleTheme()" class="theme-toggle">Toggle Theme</button>
+    </header>
+
+    <!-- Dashboard Summary Cards -->
+    <section id="dashboardSection" class="summary-cards">
+      <div class="card">
+        <h3>Total Sales</h3>
+        <p>$12,450</p>
+      </div>
+      <div class="card">
+        <h3>Pending Orders</h3>
+        <p>25 Orders</p>
+      </div>
+      <div class="card">
+        <h3>Inventory Status</h3>
+        <p>In Stock: 450</p>
+      </div>
+      <div class="card">
+        <h3>Top Products</h3>
+        <p>Seeds, Fertilizer, Tools</p>
+      </div>
+    </section>
+
+    <!-- Orders Section (Initially Hidden) -->
+    <section id="ordersSection" class="orders-section" style="display: none;">
+      <h2>Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#001</td>
+            <td>Seed A</td>
+            <td>10</td>
+            <td>Shipped</td>
+            <td>$120.00</td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>Fertilizer B</td>
+            <td>5</td>
+            <td>Processing</td>
+            <td>$100.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Inventory Table -->
+    <section class="inventory-section">
+      <div class="header-with-buttons">
+          <h2>Inventory</h2>
+          <button id="removeProductBtn">Remove Product</button>
+          <button id="addProductBtn">Add Product</button>
+      </div>
+      <table>
+          <thead>
+            <tr>
+              <th></th> <!-- Checkbox Column Header -->
+              <th>Product</th>
+              <th>Category</th>
+              <th>Stock</th>
+              <th>Price</th>
+              <th>Promo</th>
+              <th>Edit</th> <!-- Edit Price Column Header -->
+            </tr>
+          </thead>
+          <tbody id="inventoryTableBody"> <!-- Added ID for JavaScript targeting -->
+            <tr>
+              <td><input type="checkbox"></td> <!-- Checkbox Column -->
+              <td>Seed A</td>
+              <td>Seeds</td>
+              <td>120</td>
+              <td class="price-cell">$12.00</td>
+              <td>
+                <select onchange="handlePromoChange(this)">
+                    <option value="">No Promo</option>
+                    <option value="10%">10% Off</option>
+                    <option value="20%">20% Off</option>
+                    <option value="30%">30% Off</option>
+                    <option value="custom">Custom</option>
+                </select>
+                <input type="text" class="custom-promo-input" placeholder="%" style="display: none;" 
+                       onblur="saveCustomPromo(this)" oninput="validateCustomPromo(this)">
+            </td>
+              <td><button onclick="editPrice(this)" class="edit-btn">Edit Price</button></td> <!-- Edit Price Button -->
+            </tr>
+          </tbody>
+        </table>
+  </section>
+
+    <!-- History Section (Initially Hidden) -->
+<section id="historySection" class="history-section" style="display: none;">
+  <h2>Order History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Status</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#003</td>
+        <td>Seed C</td>
+        <td>15</td>
+        <td>Delivered</td>
+        <td>$150.00</td>
+      </tr>
+      <tr>
+        <td>#004</td>
+        <td>Fertilizer D</td>
+        <td>8</td>
+        <td>Cancelled</td>
+        <td>$80.00</td>
+      </tr>
+      <!-- Add more orders here as needed -->
+    </tbody>
+  </table>
+</section>
+
+<!-- Notifications Section (Initially Hidden) -->
+<section id="notificationsSection" class="notifications-section" style="display: none;">
+  <h2>Notifications</h2>
+  <div class="notification-item" onclick="openReplyModal('Buyer Alex', 'Can you expedite the shipment of Seed A?')">
+    <h4>Message from Buyer</h4>
+    <p>Buyer Alex: "Can you expedite the shipment of Seed A?"</p>
+    <span class="notification-time">2 hours ago</span>
+  </div>
+  <div class="notification-item">
+    <h4>Order Update</h4>
+    <p>Order #002: Status changed to "Shipped".</p>
+    <span class="notification-time">1 day ago</span>
+  </div>
+  <div class="notification-item">
+    <h4>Low Stock Alert</h4>
+    <p>Product "Fertilizer B" stock is below 20 units.</p>
+    <span class="notification-time">3 days ago</span>
+  </div>
+</section>
+
+<!-- Reply Modal (Initially Hidden) -->
+<div id="replyModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeReplyModal()">&times;</span>
+    <h3>Reply to Buyer</h3>
+    <p id="buyerMessage"></p>
+    <form id="replyForm">
+      <textarea id="replyText" placeholder="Write your reply here..." required></textarea>
+      <label for="attachment">Attach a file:</label>
+      <input type="file" id="attachment" name="attachment">
+      <button type="button" onclick="sendReply()">Send Reply</button>
+    </form>
+  </div>
+</div>
+
+<!-- Reports Section (Updated) -->
+<section id="reportsSection" class="reports-section" style="display: none;">
+  
+  <!-- Monthly Sales Report -->
+  <div class="report-item">
+    <h3>Monthly Sales</h3>
+    <canvas id="monthlySalesChart"></canvas>
+  </div>
+  
+  <!-- Top Selling Products Report -->
+  <div class="report-item">
+    <h3>Top Selling Products</h3>
+    <canvas id="topSellingProductsChart"></canvas>
+  </div>
+  
+  <!-- Customer Reviews Report -->
+  <div class="report-item">
+    <h3>Customer Reviews</h3>
+    <canvas id="customerReviewsChart"></canvas>
+  </div>
+</section>
+
+  </main>
+</div>
+
+
+
+
+
+
+<script src="app.js"></script>
+<!-- Include Chart.js (latest version) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
