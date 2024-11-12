@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture E-commerce Staff Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="staffdb.css">
+    <script src="analytics.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <nav>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Orders</a>
+            <a href="#" class="nav-link">Products</a>
+            <a href="#" class="nav-link">Farmers</a>
+            <a href="#" class="nav-link">Analytics</a>
+            <a href="#" class="nav-link">Settings</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="header">
+            <h4>Welcome, Edward</h4>
+        </div>
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Orders</h5>
+                            <p class="card-text">1,230</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Products</h5>
+                            <p class="card-text">560</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-white bg-warning mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Farmers</h5>
+                            <p class="card-text">450</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-white bg-danger mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Pending Reviews</h5>
+                            <p class="card-text">35</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5>Recent Orders</h5>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#15555</td>
+                        <td>joel</td>
+                        <td>Wheat</td>
+                        <td>50 kg</td>
+                        <td><span class="badge bg-success">Delivered</span></td>
+                        <td>2024-11-04</td>
+                    </tr>
+                    <tr>
+                        <td>#15462</td>
+                        <td>jongs</td>
+                        <td>Corn</td>
+                        <td>30 kg</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                        <td>2024-11-03</td>
+                    </tr>
+                    <tr>
+                        <td>#65421</td>
+                        <td>James</td>
+                        <td>Wheat</td>
+                        <td>50 kg</td>
+                        <td><span class="badge bg-success">Delivered</span></td>
+                        <td>2024-11-04</td>
+                    </tr>
+                    <tr>
+                        <td>#56215</td>
+                        <td>Delgado</td>
+                        <td>Corn</td>
+                        <td>30 kg</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                        <td>2024-11-03</td>
+                    </tr>
+                    <tr>
+                        <td>#85311</td>
+                        <td>Anilov</td>
+                        <td>Wheat</td>
+                        <td>50 kg</td>
+                        <td><span class="badge bg-success">Delivered</span></td>
+                        <td>2024-11-04</td>
+                    </tr>
+                    <tr>
+                        <td>#89743</td>
+                        <td>Edward</td>
+                        <td>Corn</td>
+                        <td>30 kg</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                        <td>2024-11-03</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="farmer-details" class="container-fluid" style="display: none;">
+        <h5>Farmers Information</h5>
+        <div class="row">
+            <!-- First Farmer Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="images/1x15.jpg" alt="Farmer Avatar" class="rounded-circle me-3" width="60" height="60">
+                            <div>
+                                <h5 class="card-title">Farmer Name: <br> John Doe</h5>
+                                <p>Items Selling: Wheat, Corn, Rice</p>
+                            </div>
+                        </div>
+                        <div class="product-images">
+                            <img src="images/wheat.jpg" alt="Wheat" class="product-img">
+                            <img src="images/corn.jpg" alt="Corn" class="product-img">
+                            <img src="images/rice.jpg" alt="Rice" class="product-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Second Farmer Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="images/1x15.jpg" alt="Farmer Avatar" class="rounded-circle me-3" width="60" height="60">
+                            <div>
+                                <h5 class="card-title">Farmer Name: <br> Jane Smith</h5>
+                                <p>Items Selling: Barley, Soybeans, Tomatoes</p>
+                            </div>
+                        </div>
+                        <div class="product-images">
+                            <img src="images/wheat.jpg" alt="Wheat" class="product-img">
+                            <img src="images/corn.jpg" alt="Corn" class="product-img">
+                            <img src="images/rice.jpg" alt="Rice" class="product-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+            
+            <!-- Add more farmer cards as needed -->
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const farmersLink = document.querySelector('.nav-link:nth-child(4)'); // Assuming the 4th nav-link is for farmers
+            const farmerDetails = document.getElementById('farmer-details');
+            const mainContent = document.querySelector('.content');
+    
+            farmersLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                mainContent.style.display = 'none'; // Hide the main content
+                farmerDetails.style.display = 'block'; // Show the farmer details section
+            });
+        });
+    </script>
+
+<div id="analytics-details" class="container-fluid" style="display: none;">
+    <h5>Analytics Overview</h5>
+    <div class="row">
+        <!-- Example Chart Placeholder -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sales Chart</h5>
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Farmer Performance</h5>
+                    <canvas id="farmerPerformanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx1 = document.getElementById('salesChart').getContext('2d');
+        const ctx2 = document.getElementById('farmerPerformanceChart').getContext('2d');
+        
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [30, 50, 40, 60, 70],
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)'
+                }]
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Farmer Performance',
+                    data: [10, 20, 15, 30],
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            }
+        });
+    });
+</script>
+
+<div id="products-details" class="container-fluid" style="display: none;">
+    <h5>Product List</h5>
+    <div class="row">
+        <!-- Example Product Card -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="images/wheat.jpg" class="card-img-top product-img1" alt="Wheat">
+                <div class="card-body">
+                    <h5 class="card-title">Product: Wheat</h5>
+                    <p>Number of Purchases: 150</p>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐☆</span> <!-- Example 4-star rating -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more product cards as needed -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="images/corn.jpg" class="card-img-top product-img1" alt="Corn">
+                <div class="card-body">
+                    <h5 class="card-title">Product: Corn</h5>
+                    <p>Number of Purchases: 120</p>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span> <!-- Example 5-star rating -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="orders-details" class="container-fluid" style="display: none;">
+    <h5>Order Details</h5>
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total Orders</h5>
+                    <p class="card-text">1,230</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Completed Orders</h5>
+                    <p class="card-text">900</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Pending Orders</h5>
+                    <p class="card-text">250</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Cancelled Orders</h5>
+                    <p class="card-text">80</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#15555</td>
+                <td>Joel</td>
+                <td>Wheat</td>
+                <td>50 kg</td>
+                <td><span class="badge bg-success">Delivered</span></td>
+                <td>2024-11-04</td>
+                <td>On-time delivery</td>
+            </tr>
+            <tr>
+                <td>#15462</td>
+                <td>Jongs</td>
+                <td>Corn</td>
+                <td>30 kg</td>
+                <td><span class="badge bg-warning">Pending</span></td>
+                <td>2024-11-03</td>
+                <td>Rush order</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="images/bgvid.webm" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+    <!-- The rest of your code remains unchanged -->
+</body>
+
+<div id="settings-details" class="container-fluid" style="display: none;">
+    <h5>Settings</h5>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h6>Profile Management</h6>
+            <button id="updateProfileBtn" class="btn btn-primary mb-2">Update Profile</button>
+            <button id="changePasswordBtn" class="btn btn-secondary mb-2">Change Password</button>
+        </div>
+        <div class="col-md-6">
+            <h6>Notification Preferences</h6>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="emailNotifications">
+                <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="smsNotifications">
+                <label class="form-check-label" for="smsNotifications">SMS Notifications</label>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h6>Theme Customization</h6>
+            <button id="toggleDarkMode" class="btn btn-dark mb-2">Toggle Dark Mode</button>
+            <label for="colorSchemeSelect">Color Scheme:</label>
+            <select id="colorSchemeSelect" class="form-select">
+                <option value="default">Default</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <h6>Security Settings</h6>
+            <button id="enable2FA" class="btn btn-warning mb-2">Enable 2FA</button>
+            <button id="manageSessions" class="btn btn-outline-danger mb-2">Manage Sessions</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

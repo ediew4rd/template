@@ -1,0 +1,188 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-color: #f3f4f6;
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    background: linear-gradient(135deg, #4caf50, #087f23);
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2 {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+.sidebar .nav-link {
+    color: white;
+    padding: 12px 20px;
+    margin: 5px 0;
+    width: 100%;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dashboard Cards */
+.card .card-body {
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
+.table th, .table td {
+    font-weight: 400;
+    padding: 12px 15px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(240, 240, 240, 0.5);
+}
+
+.badge {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+/* Farmer and Product Image Cards */
+.product-images {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    transition: transform 0.3s ease;
+}
+
+.product-img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Background Video and Overlay */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.4);
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .card,
+.dark-mode .sidebar,
+.dark-mode .header {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+.dark-mode .btn {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.dark-mode .form-check-input {
+    background-color: #333;
+    border-color: #444;
+}
+
+/* Ratings */
+.rating {
+    font-size: 1.3rem;
+    color: #ffc107;
+}
+
+.product-img1 {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Hover Animations */
+.nav-link:hover,
+.card:hover {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #00563f;
+    transform: scale(1.05);
+}
