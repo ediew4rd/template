@@ -1,0 +1,165 @@
+/* Body Styles */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Auth Container */
+.auth-container {
+    background-color: #fff;
+    padding: 2.5em 3em;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    margin: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Styling */
+.auth-logo {
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-logo i {
+    font-size: 60px;
+    color: #6c5ce7;  /* Fancy modern purple */
+    transition: color 0.3s ease;
+}
+
+.auth-logo i:hover {
+    color: #a29bfe;
+}
+
+
+h2 {
+    font-size: 1.7em;
+    margin-bottom: 1em;
+    font-weight: 600;
+    color: #2d3436;
+    letter-spacing: 0.5px;
+}
+
+
+.email-label {
+    color: #636e72;
+    font-size: 1em;
+    margin-bottom: 0.8em;
+    letter-spacing: 0.5px;
+}
+
+/* Form Instructions */
+.auth-instructions {
+    color: #b2bec3;
+    font-size: 0.95em;
+    margin-bottom: 1.5em;
+    line-height: 1.4;
+}
+
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Hidden Label */
+.hidden-label {
+    display: none;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1.2em;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    color: #2d3436;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #6c5ce7;
+    outline: none;
+    box-shadow: 0 0 10px rgba(108, 92, 247, 0.2);
+}
+
+/* Verify Button */
+.verify-button {
+    background: #007bff;
+    color: #fff;
+    padding: 1em;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.verify-button:hover {
+    background: linear-gradient(145deg, #a29bfe, #6c5ce7);
+    transform: scale(1.05);
+}
+
+.options {
+    margin-top: 1.5em;
+    text-align: flex;
+    padding-left: 350px;
+}
+
+.link {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-size: 1em;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover {
+    color: #a29bfe;
+    transform: translateY(-2px);
+}
+
+
+.auth-logo i {
+    font-size: 60px;
+    color: #007bff;
+    margin-bottom: 1em;
+}
+
+.email-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.email-container i {
+    color: #b2bec3;
+    margin-right: 12px;
+    font-size: 1.3em;
+}
