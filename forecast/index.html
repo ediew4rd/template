@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="weather-container">
+    <div class="current-weather">
+      <div class="temp">
+        <span>33</span>°C
+      </div>
+      <div class="details">
+        <p>Pinagbuhatan, Metro Manila</p>
+        <p>Wednesday | Partly Cloudy</p>
+        <p>Precipitation: 10% |<br> Humidity: 76% | <br>
+             Wind: 11 km/h | </p>
+      </div>
+    </div>
+
+    <div class="graph-container">
+      <canvas id="temperatureChart"></canvas>
+    </div>
+
+    <div class="daily-forecast">
+      <div class="day">
+        <p>Wed</p>
+        <img src="images/cloudy.png" alt="Cloudy">
+        <p>33° 25°</p>
+      </div>
+      <div class="day">
+        <p>Thu</p>
+        <img src="images/cloudy.png" alt="Cloudy">
+        <p>33° 25°</p>
+      </div>
+      <div class="day">
+        <p>Fri</p>
+        <img src="images/cloudy.png" alt="Cloudy">
+        <p>32° 26°</p>
+      </div>
+      <div class="day">
+        <p>Sat</p>
+        <img src="images/cloudy.png" alt="Cloudy">
+        <p>32° 26°</p>
+      </div>
+      <div class="day">
+        <p>Sun</p>
+        <img src="images/cloudy.png" alt="Cloudy">
+        <p>32° 26°</p>
+      </div>
+      <div class="day">
+        <p>Mon</p>
+        <img src="images/cloudy.png" alt="Cloudy">
+        <p>32° 26°</p>
+      </div>
+      <div class="day">
+        <p>Tue</p>
+        <img src="images/cloudy.png" alt="Cloudy">
+        <p>33° 26°</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
