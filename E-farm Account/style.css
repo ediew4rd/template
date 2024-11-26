@@ -1,0 +1,135 @@
+/* General Styling */
+body {
+    background-color: #eaeaea; /* Light gray for a minimalist and modern look */
+    color: #333; /* Neutral text color */
+    font-family: 'Arial', sans-serif;
+}
+
+.dashboard-container {
+    padding: 20px;
+    max-width: calc(100% - 250px); /* Adjusted to account for sidebar width */
+    margin: 0 auto;
+    margin-left: 250px; /* Offset by the sidebar width */
+}
+
+h1, h3 {
+    font-weight: bold;
+    color: #333; /* Neutral text color */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    background: #333; /* Neutral dark background for sidebar */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+.sidebar h2 {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+.sidebar .nav-link {
+    color: white;
+    padding: 12px 20px;
+    margin: 5px 0;
+    width: 100%;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff; /* White background for minimalist look */
+}
+
+.card-title {
+    font-size: 18px;
+    color: #555; /* Neutral gray for text */
+}
+
+.card-body h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333; /* Neutral text color */
+}
+
+/* Chart */
+.chart-container {
+    margin: 20px auto;
+    background: #fff; /* White background for modern appearance */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Table */
+table {
+    background: #fff; /* White table background */
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Light border for minimalist style */
+}
+
+thead {
+    background-color: #333; /* Dark header for contrast */
+    color: #fff; /* White text for readability */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Subtle hover effect */
+}
+
+/* Search Bar */
+#searchInput {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #555;
+    outline: none;
+}
