@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+	
+	<!-- My CSS -->
+	<link rel="stylesheet" href="analytics.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<title>E-Farm</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">E-Farm</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="order.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Order Management</span>
+				</a>
+			</li>
+			<li  class="active">
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+			<li>
+				<a href="messages.html">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Chat Support</span>
+				</a>
+			</li>
+			<!-- 
+			<li>
+				<a href="record.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Record list</span>
+				</a>
+			</li>
+			SIDEBAR -->
+			<li>
+				<a href="application.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Application</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="settings.html">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell'></i>
+				<span class="num">3</span>
+			</a>
+			
+			<!-- Notification Bar -->
+			<div class="notification-bar hidden" id="notificationBar">
+				<div class="notification-header">
+					<h4>Notifications</h4>
+					<button id="markAllRead" class="mark-all-read">
+						<i class='bx bx-envelope-open'></i> Mark All as Read
+					</button>
+				</div>
+				<ul class="notification-list" id="notificationList">
+					<li>
+						<span class="notification-text">Order #123 has been shipped</span>
+						<button class="mark-read-btn">
+							<i class='bx bx-envelope-open'></i>
+						</button>
+					</li>
+					<li>
+						<span class="notification-text">New message from Admin</span>
+						<button class="mark-read-btn">
+							<i class='bx bx-envelope-open'></i>
+						</button>
+					</li>
+					<li>
+						<span class="notification-text">Investor update available</span>
+						<button class="mark-read-btn">
+							<i class='bx bx-envelope-open'></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="profile">
+				<img src="img/profile1x12.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+        <main>
+            <div class="analytics-overview">
+                <div class="stat">
+                    <h4>Overall Accounts</h4>
+                    <p id="totalUsers">Loading...</p>
+                </div>
+                <div class="stat">
+                    <h4>Active Users (Website)</h4>
+                    <p id="activeWebsiteUsers">Loading...</p>
+                </div>
+                <div class="stat">
+                    <h4>Active Admins</h4>
+                    <p id="activeAdmins">Loading...</p>
+                </div>
+            </div>
+  <!-- 
+				<div class="dropdown">
+					<button class="dropdown-btn">
+						<span id="dropdown-selected">Account Registered in Week</span> 
+						<i class='bx bx-chevron-down'></i> 
+					</button>
+					<ul class="dropdown-menu">
+						<li data-value="week">Account Registered in Week</li>
+						<li data-value="month">Account Registered in Month</li>
+						<li data-value="yearly">Account Registered Yearly</li>
+						<li data-value="overall">Overall Order</li>
+
+					</ul>
+				</div>
+			</div>
+			
+			<canvas id="userGraph"></canvas>
+			
+			<script>
+				document.addEventListener('DOMContentLoaded', () => {
+					const dropdownBtn = document.querySelector('.dropdown-btn');
+					const dropdownMenu = document.querySelector('.dropdown-menu');
+					const selected = document.getElementById('dropdown-selected');
+			
+					// Toggle dropdown visibility
+					dropdownBtn.addEventListener('click', () => {
+						dropdownMenu.classList.toggle('show');
+					});
+			
+					// Handle dropdown selection
+					dropdownMenu.addEventListener('click', (event) => {
+						if (event.target.tagName === 'LI') {
+							const value = event.target.getAttribute('data-value');
+							const text = event.target.innerText;
+							selected.innerText = text;
+							dropdownMenu.classList.remove('show');
+			
+							// Perform actions based on selected value
+							updateGraph(value);
+						}
+					});
+			
+					// Update graph data based on selection
+					function updateGraph(value) {
+						console.log(`Updating graph for: ${value}`);
+						// Logic to update chart data based on value (e.g., overall, week, month, yearly)
+					}
+				});
+			</script>
+
+			MAIN CONTENT -->
+    
+            <div class="analytics-graph">
+                <canvas id="userGraph"></canvas>
+            </div>
+          </main>
+       </div>
+
+	               <!-- MAIN CONTENT -->
+				   <main>
+					<!-- Search Bar -->
+					<div class="search-bar">
+						<input type="text" id="search" placeholder="Search by account type...">
+					</div>
+		
+					<!-- Account Record Categories -->
+					<div class="account-categories">
+						<div class="category" id="buyers-category">
+							<h3>Buyers</h3>
+							<p id="buyers-count">50</p>
+						</div>
+						<div class="category" id="sellers-category">
+							<h3>Sellers</h3>
+							<p id="sellers-count">30</p>
+						</div>
+						<div class="category" id="investors-category">
+							<h3>Investors</h3>
+							<p id="investors-count">15</p>
+						</div>
+					</div>
+					
+					<!-- Records Table -->
+					<div class="record-table">
+						<table>
+							<thead>
+								<tr>
+									<th>Account Type</th>
+									<th>Account Name</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody id="record-list">
+								 <!-- Buyers -->
+								 <tr>
+									<td>Buyer</td>
+									<td>Juan Dela Cruz</td>
+									<td>juandelacruz@example.com</td>
+								</tr>
+								<tr>
+									<td>Buyer</td>
+									<td>Carlos Garcia</td>
+									<td>carlosgarcia@example.com</td>
+								</tr>
+								<tr>
+									<td>Buyer</td>
+									<td>Ana Reyes</td>
+									<td>anareyes@example.com</td>
+								</tr>
+								<tr>
+									<td>Buyer</td>
+									<td>Miguel Bautista</td>
+									<td>miguelbautista@example.com</td>
+								</tr>
+					
+								<!-- Sellers -->
+								<tr>
+									<td>Seller</td>
+									<td>Maria Santos</td>
+									<td>mariasantos@example.com</td>
+								</tr>
+								<tr>
+									<td>Seller</td>
+									<td>Teresa Mendoza</td>
+									<td>teresamendoza@example.com</td>
+								</tr>
+								<tr>
+									<td>Seller</td>
+									<td>Ramon Aquino</td>
+									<td>ramonaquino@example.com</td>
+								</tr>
+								<tr>
+									<td>Seller</td>
+									<td>Liza Ramos</td>
+									<td>lizaramos@example.com</td>
+								</tr>
+					
+								<!-- Investors -->
+								<tr>
+									<td>Investor</td>
+									<td>Jose Rizal</td>
+									<td>joserizal@example.com</td>
+								</tr>
+								<tr>
+									<td>Investor</td>
+									<td>Ernesto Navarro</td>
+									<td>ernestonavarro@example.com</td>
+								</tr>
+								<tr>
+									<td>Investor</td>
+									<td>Sofia Lim</td>
+									<td>sofialim@example.com</td>
+								</tr>
+								<tr>
+									<td>Investor</td>
+									<td>Eduardo Tan</td>
+									<td>eduardotan@example.com</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</main>
+			</section>
+		
+			<!-- SCRIPTS -->
+			<script>
+				// Search functionality
+				document.getElementById("search").addEventListener("input", function() {
+					const query = this.value.toLowerCase();
+					const rows = document.querySelectorAll("#record-list tr");
+					
+					rows.forEach(row => {
+						const cells = row.querySelectorAll("td");
+						const accountType = cells[0].textContent.toLowerCase();
+						const accountName = cells[1].textContent.toLowerCase();
+						
+						if (accountType.includes(query) || accountName.includes(query)) {
+							row.style.display = "";
+						} else {
+							row.style.display = "none";
+						}
+					});
+				});
+			</script>
+	
+			 
+    
+	<script src="notification.js"></script> 
+       <script src="analytics.js"></script> 
+	<script src="script.js"></script>
+</body>
+</html>

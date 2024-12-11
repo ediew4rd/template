@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<!-- My CSS -->
+	<link rel="stylesheet" href="navbar.css">
+
+	<title>E-Farm</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<h2>E<span class="text" style=" color:#4CBB17">-Farm</span></h2>
+		</a>
+		<ul class="side-menu top">
+			<li  class="active">
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="order.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Order Management</span>
+				</a>
+			</li>
+			<li>
+				<a href="analytics.html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+			<li>
+				<a href="messages.html">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+			<!--
+			<li>
+				<a href="record.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Record list</span>
+				</a>
+			</li>
+		-->
+			<li>
+				<a href="application.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Application</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell'></i>
+				<span class="num">3</span>
+			</a>
+			
+			<!-- Notification Bar -->
+			<div class="notification-bar hidden" id="notificationBar">
+				<div class="notification-header">
+					<h4>Notifications</h4>
+					<button id="markAllRead" class="mark-all-read">
+						<i class='bx bx-envelope-open'></i> Mark All as Read
+					</button>
+				</div>
+				<ul class="notification-list" id="notificationList">
+					<li>
+						<span class="notification-text">Order #123 has been shipped</span>
+						<button class="mark-read-btn">
+							<i class='bx bx-envelope-open'></i>
+						</button>
+					</li>
+					<li>
+						<span class="notification-text">New message from Admin</span>
+						<button class="mark-read-btn">
+							<i class='bx bx-envelope-open'></i>
+						</button>
+					</li>
+					<li>
+						<span class="notification-text">Investor update available</span>
+						<button class="mark-read-btn">
+							<i class='bx bx-envelope-open'></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+
+			<a href="#" class="profile">
+				<img src="img/profile1x1.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+
+		<div class="dashboard-container">
+			<!-- Header Cards -->
+			<section class="header-cards">
+				<div class="card">
+					<h3>Approval Status</h3>
+					<div class="stats">
+						<div class="stat">
+							<span>Requested</span>
+							<p>265</p>
+						</div>
+						<div class="stat">
+							<span>Approved</span>
+							<p>42</p>
+						</div>
+						<div class="stat">
+							<span>Rejected</span>
+							<p>4</p>
+						</div>
+						<div class="stat">
+							<span>Pending</span>
+							<p>18</p>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<h3>Overtime Hours Summary</h3>
+					<div class="stats">
+						<div class="stat">
+							<span>Overtime Hours</span>
+							<p>42</p>
+						</div>
+						<div class="stat">
+							<span>Compensation</span>
+							<p>5</p>
+						</div>
+						<div class="stat">
+							<span>Average Overtime</span>
+							<p>21</p>
+						</div>
+						<div class="stat">
+							<span>Overtime by Job Type</span>
+							<p>21</p>
+						</div>
+					</div>
+				</div>
+			</section>
+	
+			<!-- Table Section -->
+			<section class="table-container">
+				<div class="table-controls">
+					<div class="filters">
+						<input type="text" placeholder="Search Overtime">
+						<select>
+							<option>All Compensation</option>
+						</select>
+						<select>
+							<option>All Status</option>
+						</select>
+						<button class="btn">Advance Filter</button>
+					</div>
+					<div class="settings">
+						<button class="btn">General Settings</button>
+						<button class="btn approve-all">Approve All</button>
+					</div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>Request Date</th>
+							<th>Overtime Date</th>
+							<th>Employee</th>
+							<th>Duration</th>
+							<th>Time</th>
+							<th>Description</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>7 February 2024</td>
+							<td>8 February 2024</td>
+							<td>
+								<div class="employee">
+									<img src="https://via.placeholder.com/40" alt="Avatar">
+									<span>Bagus Firki</span>
+								</div>
+							</td>
+							<td>2 hours</td>
+							<td>07:00 PM - 09:00 PM</td>
+							<td>Unexpected project delays</td>
+							<td>
+								<button class="btn approve">Approve</button>
+								<button class="btn reject">Reject</button>
+							</td>
+						</tr>
+						<tr>
+							<td>12 March 2024</td>
+							<td>12 March 2024</td>
+							<td>
+								<div class="employee">
+									<img src="https://via.placeholder.com/40" alt="Avatar">
+									<span>Ibadein</span>
+								</div>
+							</td>
+							<td>2 hours 30 min</td>
+							<td>06:30 PM - 09:00 PM</td>
+							<td>System or technical issues</td>
+							<td>
+								<button class="btn approve">Approve</button>
+								<button class="btn reject">Reject</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+
+		
+		<script src="navbar.js"></script>
+		<script src="notification.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
